@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html >
+
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<!--link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"-->
+  
+</head>
+
+<style>
+h1 {text-align: center;}
+img {
+  border: 5px solid #555;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+body {
+  background-color: #ADD8E6;
+}
+
+.temp123
+{
+margin: 0 auto;
+margin-left: auto;
+margin-right: auto;
+text-align:center;
+}
+
+.footer{ 
+       position: fixed;     
+       text-align: center;    
+       bottom: 0px; 
+       width: 100%;
+   }  
+</style>
+
+
+
+<body>
+ <div class="login">
+    
+	<h1><b><u>Demo App</u></b></h1>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{'keyword'}}"method="post">
+    <center>
+        <b><label for="keyword" style="color:blue;">Tag</label></b>
+    	<input type="text" name="keyword" placeholder="word" required="required" />
+                
+        <button type="submit" class="btn btn-primary btn-block btn-large"  >Submit</button>
+    </center>
+
+   <br>
+   <br>
+   
+   <center><b><u>{{Top_Five_Tweets}}</u></b>
+   {% for s in prediction %}
+        <p>{{s}}<p>
+   {% endfor %}
+   </center>
+   
+</div>
+</form>
+ </div>
+
+
+</body>
+</html>
+
+

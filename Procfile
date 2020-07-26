@@ -1,0 +1,1 @@
+web: gunicorn Demo_app:app
